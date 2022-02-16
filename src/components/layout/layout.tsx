@@ -4,6 +4,7 @@ import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 import { ForecastModel } from "../../models/forecast-model";
 import { getForecast } from "../../services/forecast";
 import { getDate } from "../../services/date";
+import { addZero } from "../../services/date";
 
 interface LayoutState {
     forecast: ForecastModel;
@@ -33,7 +34,6 @@ export class Layout extends Component<any, LayoutState>{
     private getCityInput = (args: ChangeEvent<HTMLInputElement>) => {
         const city = args.target.value;
         this.setState({ city });
-        console.log(city);
     }
 
     //checking if user click on Enter
@@ -95,19 +95,19 @@ export class Layout extends Component<any, LayoutState>{
         switch (hourNow) {
             case 20:
                 hoursToday = [20, 21, 22, 23];
-                hoursTomorrow=[24];
+                hoursTomorrow =[0];
                 break;
             case 21:
                 hoursToday = [21, 22, 23];
-                hoursTomorrow=[24, 25];
+                hoursTomorrow =[0, 1];
                 break;
             case 22:
                 hoursToday = [22, 23];
-                hoursTomorrow=[0, 1, 2];
+                hoursTomorrow =[0, 1, 2];
                 break;
             case 23:
                 hoursToday = [23];
-                hoursTomorrow=[0, 1, 2, 3];
+                hoursTomorrow =[0, 1, 2, 3];
                 break;
             default:
                 hoursToday = [hourNow, hourNow +1, hourNow +2, hourNow +3, hourNow +4];
@@ -178,14 +178,14 @@ export class Layout extends Component<any, LayoutState>{
                                         </div>
                                         <div className="wrap-between">
                                             {this.state.hoursToday.length > 0 && this.state.hoursToday.map(h =>
-                                                <div className="wrap-column">
-                                                    <span className="weather-time">{h}:00</span>
+                                                <div className="wrap-column" key={`forecast${h}`}>
+                                                    <span className="weather-time">{addZero(h)}:00</span>
                                                     <span><b>{this.state.forecast.forecast.forecastday[0].hour[h].temp_c}°</b></span>
                                                 </div>
                                             )}
                                             {this.state.hoursTomorrow.length > 0 && this.state.hoursTomorrow.map(h =>
-                                                <div className="wrap-column">
-                                                    <span className="weather-time">{h}:00</span>
+                                                <div className="wrap-column" key={`forecast${h}`}>
+                                                    <span className="weather-time">{addZero(h)}:00</span>
                                                     <span><b>{this.state.forecast.forecast.forecastday[1].hour[h].temp_c}°</b></span>
                                                 </div>
                                             )}

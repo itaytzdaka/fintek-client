@@ -11,7 +11,7 @@ export function getDate(date: Date) :string {
 }
 
 //add zero before the number
-function addZero(num: any) :string{
+export function addZero(num: any) :string{
     const str=num.toString();
     if(str.length==1){
         return `0${str}`;
