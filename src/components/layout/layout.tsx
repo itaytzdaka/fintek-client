@@ -1,6 +1,6 @@
 import React, { Component, ChangeEvent } from "react";
 import "./layout.css";
-import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
+import { ReactComponent as Logo } from "../../assets/svg/weather.svg";
 import { ForecastModel } from "../../models/forecast-model";
 import { getForecast } from "../../services/forecast";
 import { getDate } from "../../services/date";

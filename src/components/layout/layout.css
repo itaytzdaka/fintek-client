@@ -85,14 +85,14 @@ button {
     height: 100%;
     font-size: 1rem;
     border-radius: 10px;
-    background-color: #046B3B;
+    background-color: #0f55be;
     color: #FFFFFF;
     padding: 5px 20px;
     font-family: 'Heebo', sans-serif;
 }
 
 button:hover{
-    background-color: #047a5d;
+    background-color: #083d8d;
 }
 
 .weather-container{
@@ -103,14 +103,13 @@ button:hover{
     flex-grow: 2;
     min-height: 100%;
     border-radius: 2px;
-    background-color: #DDE4E6;
 }
 
 .weather-container-2{
     width: 66%;
     margin: auto;
     border-radius: 25px;
-    background-color: #27737D;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(32,119,157,1) 47%, rgba(0,212,255,1) 100%);
     color: white;
     text-align: center;
     overflow: auto;
@@ -153,12 +152,12 @@ button:hover{
 
 .country{
     font-size: 1.3rem;
-    color: #A8C6CB;
+    color: #c8f7ff;
 }
 
 .date{
     margin-bottom: 15%;
-    color: #A8C6CB;
+    color: #c8f7ff;
 }
 
 .degree-value , .degree{
@@ -182,6 +181,10 @@ button:hover{
 
 .weather-time{
     color: #A8C6CB;
+}
+
+header svg{
+    height: 100px;
 }
 
 /* from 520px to 767px */
