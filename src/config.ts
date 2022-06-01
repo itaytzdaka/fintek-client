@@ -4,7 +4,7 @@ export class Config{
 
     public static _initialize(){
         if(process.env.NODE_ENV === "production"){
-            Config.serverUrl="https://itay-fintek.herokuapp.com";
+            Config.serverUrl="https://itay-weather.herokuapp.com";
         }
 
         else{
